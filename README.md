@@ -89,22 +89,22 @@ int main() {
     printf("Enter the base point G (x and y): ");
     scanf("%lld %lld", &G.x, &G.y);
 
-    printf("Enter Kaydens private key: ");
+    printf("Enter Kani private key: ");
     scanf("%lld", &privateA);
-    printf("Enter Zhenya's private key: ");
+    printf("Enter Udai's private key: ");
     scanf("%lld", &privateB);
 
     publicA = scalarMultiplication(G, privateA, a, p);
     publicB = scalarMultiplication(G, privateB, a, p);
 
-    printf("Kayden's public key: (%lld, %lld)\n", publicA.x, publicA.y);
-    printf("Zhenya's public key: (%lld, %lld)\n", publicB.x, publicB.y);
+    printf("Kani's public key: (%lld, %lld)\n", publicA.x, publicA.y);
+    printf("Udai's public key: (%lld, %lld)\n", publicB.x, publicB.y);
 
     sharedSecretA = scalarMultiplication(publicB, privateA, a, p);
     sharedSecretB = scalarMultiplication(publicA, privateB, a, p);
 
-    printf("Shared secret computed by Kayden: (%lld, %lld)\n", sharedSecretA.x, sharedSecretA.y);
-    printf("Shared secret computed by Zhenya: (%lld, %lld)\n", sharedSecretB.x, sharedSecretB.y);
+    printf("Shared secret computed by Kani: (%lld, %lld)\n", sharedSecretA.x, sharedSecretA.y);
+    printf("Shared secret computed by Udai: (%lld, %lld)\n", sharedSecretB.x, sharedSecretB.y);
 
     if (sharedSecretA.x == sharedSecretB.x && sharedSecretA.y == sharedSecretB.y) {
         printf("Key exchange successful. Both shared secrets match!\n");
@@ -119,8 +119,7 @@ int main() {
 
 ## Output:
 
-<img width="1911" height="942" alt="Screenshot 2025-10-30 140043" src="https://github.com/user-attachments/assets/18907dc9-5bc2-43fe-ab8f-618fc4abdeaf" />
-
+<img width="1900" height="913" alt="Screenshot 2025-10-30 141853" src="https://github.com/user-attachments/assets/b65dfcc5-82ef-4338-9305-4672aa1e804c" />
 
 ## Result:
 The program is executed successfully
